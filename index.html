@@ -97,6 +97,17 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,B
 .ext h4{margin:0 0 2px;font-size:14.5px}
 .ext p{margin:0;font-size:12.5px;color:var(--muted)}
 
+/* 少林寺 spotlight */
+.shaolin{display:flex;gap:18px;align-items:stretch;border:1px solid var(--green-line);background:var(--green-bg);border-radius:16px;padding:18px;margin-top:6px}
+@media(max-width:760px){.shaolin{flex-direction:column}}
+.shaolin .s-img{flex:0 0 42%;border-radius:12px;overflow:hidden;min-height:200px}
+.shaolin .s-img img{width:100%;height:100%;object-fit:cover;display:block}
+.shaolin .s-txt{flex:1;display:flex;flex-direction:column}
+.shaolin .s-txt>p{margin:0 0 12px;font-size:15px;color:#3f4b5f}
+.shaolin .s-pts{display:grid;gap:9px;margin-top:auto}
+.shaolin .s-pt{display:flex;gap:8px;font-size:14px;color:#2a3441}
+.shaolin .s-pt b{color:var(--green-dark);white-space:nowrap}
+
 /* ===== 对比表 ===== */
 .compare{margin-top:40px}
 .compare h2{font-size:22px;margin:0 0 16px;text-align:center}
@@ -128,8 +139,8 @@ td.c-b{color:#b06f16}
   <header class="hero">
     <span class="kicker">国庆亲子游 · 爸爸带两个小学生</span>
     <h1>两条路线，到底哪条更好玩？</h1>
-    <p class="sub">北京出发，避开人海，3～4 天。一条玩水看猴、清凉省心；一条滑沙骑骆驼、塞外撒野。下面把两条路线掰开揉碎讲清楚，方便咱们全家一起拍板。</p>
-    <div class="tags"><span>🚗 北京出发</span><span>👨‍👧‍👦 带 2 个娃</span><span>⛰️ 纯内陆 · 不靠海</span><span>🎒 避开高峰人群</span><span>🕒 3～4 天</span></div>
+    <p class="sub">北京出发，避开人海，4 天 3 晚。一条玩水看猴、再访少林寺；一条滑沙骑骆驼、塞外撒野。下面把两条路线掰开揉碎讲清楚，方便咱们全家一起拍板。</p>
+    <div class="tags"><span>🚗 北京出发</span><span>👨‍👧‍👦 带 2 个娃</span><span>⛰️ 纯内陆 · 不靠海</span><span>🎒 避开高峰人群</span><span>🕒 4 天 3 晚</span></div>
   </header>
 
   <!-- ===================== 路线 A：云台山 ===================== -->
@@ -137,18 +148,18 @@ td.c-b{color:#b06f16}
     <div class="cover">
       <img src="yuntaishan.png" alt="云台山红石峡" onerror="this.style.display='none'">
       <span class="badge">路线 A · 山水清凉</span>
-      <span class="num">3 天 2 晚</span>
+      <span class="num">4 天 3 晚</span>
       <span class="caption">云台山红石峡 · 红岩碧水，亲水栈道</span>
     </div>
     <div class="inner">
       <div class="head"><h2>云台山</h2><span class="loc">河南 · 焦作 · 修武县</span></div>
-      <p class="one-liner">人称「北方小九寨」，红石峡踩水打水仗 + 猕猴谷喂猴子 + 潭瀑峡溯溪看瀑布，山、水、猴一次集齐，10 月水量好、红叶渐起，正是最好看的季节。</p>
+      <p class="one-liner">人称「北方小九寨」，红石峡踩水打水仗 + 猕猴谷喂猴子 + 潭瀑峡溯溪看瀑布，山、水、猴一次集齐；再加一天登封少林寺，看千年古刹、武僧功夫和塔林。10 月水量好、红叶渐起，正是最好看的季节。</p>
       <div class="facts">
         <div class="fact"><b>高铁直达</b><span>约 4.5 小时</span></div>
         <div class="fact"><b>5A 级景区</b><span>云台山主景区</span></div>
         <div class="fact"><b>最佳季</b><span>10 月水景 + 红叶</span></div>
         <div class="fact"><b>体力中等</b><span>节奏轻松不赶</span></div>
-        <div class="fact"><b>3 天 2 晚</b><span>高铁往返刚好</span></div>
+        <div class="fact"><b>4 天 3 晚</b><span>多一天去少林寺</span></div>
         <div class="fact"><b>门票需预约</b><span>国庆尽早锁定</span></div>
       </div>
 
@@ -177,7 +188,7 @@ td.c-b{color:#b06f16}
         </div>
       </div>
 
-      <h3 class="sec"><span class="t">3 天怎么玩</span><span class="d">大致节奏，先有个数</span></h3>
+      <h3 class="sec"><span class="t">4 天怎么玩</span><span class="d">大致节奏，先有个数</span></h3>
       <div class="days">
         <div class="day">
           <span class="d-tag">Day 1</span>
@@ -196,8 +207,29 @@ td.c-b{color:#b06f16}
         <div class="day">
           <span class="d-tag">Day 3</span>
           <div class="d-body">
+            <h4>登封少林寺一日 · 看功夫</h4>
+            <p>从焦作转短途到登封（约 1.5～2 小时车程），全天泡在少林寺：看千年古刹、塔林，再看一场武僧功夫表演，男孩多半会「哇」出来。</p>
+          </div>
+        </div>
+        <div class="day">
+          <span class="d-tag">Day 4</span>
+          <div class="d-body">
             <h4>补一个轻松项目 · 返京</h4>
             <p>上午按孩子兴趣挑一个轻松的（云台溶洞钻洞，或怪坡园看「水往高处流」），下午高铁返京，晚饭前到家。</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sec"><span class="t">少林寺一日 · 孩子会看什么</span><span class="d">功夫之乡，男孩女孩都着迷</span></h3>
+      <div class="shaolin">
+        <div class="s-img"><img src="shaolinsi.png" alt="登封少林寺" onerror="this.style.display='none'"></div>
+        <div class="s-txt">
+          <p>少林寺是「天下功夫出少林」的地方，也是世界文化遗产。对刚上小学的孩子来说，这里不只是一座古庙，更是一个「电影里的功夫世界照进现实」的地方——亲眼看到武僧练功，比任何动画都震撼。</p>
+          <div class="s-pts">
+            <div class="s-pt"><b>🏛️ 常住院</b><span>千年古刹，山门、天王殿、大雄宝殿一路走，听「十三棍僧救唐王」的故事。</span></div>
+            <div class="s-pt"><b>🗿 塔林</b><span>全国最大的塔林，历代高僧的墓塔一座挨一座，孩子数塔、猜塔层，长见识。</span></div>
+            <div class="s-pt"><b>🥋 武僧功夫表演</b><span>铁头功、童子功、少林棍，真功夫就在眼前演，孩子看得目不转睛，是最舍不得走的一站。</span></div>
+            <div class="s-pt"><b>🚡 三皇寨（可选）</b><span>乘索道俯瞰嵩山险峻山色，体力允许可以走一小段栈道。</span></div>
           </div>
         </div>
       </div>
@@ -249,16 +281,16 @@ td.c-b{color:#b06f16}
           <div class="txt">
             <h4>还想再远一点？</h4>
             <p class="desc">云台山地处河南，顺路可往洛阳、开封方向延伸。</p>
-            <p class="kid"><b>可选方向：</b>少林寺（登封）、龙门石窟（洛阳）、清明上河园（开封）。</p>
+            <p class="kid"><b>可选方向：</b>龙门石窟（洛阳）、清明上河园（开封）。</p>
           </div>
         </div>
       </div>
 
       <h3 class="sec"><span class="t">可顺路延伸</span><span class="d">多请一天假，就能多逛一座城</span></h3>
       <div class="extend">
-        <div class="ext"><span class="e-ic">🥋</span><div><h4>少林寺 · 登封</h4><p>功夫发源地，看武僧表演、塔林，男孩多半会迷上。</p></div></div>
         <div class="ext"><span class="e-ic">🪨</span><div><h4>龙门石窟 · 洛阳</h4><p>千年石窟群，顺带历史启蒙，震撼又有文化。</p></div></div>
         <div class="ext"><span class="e-ic">🏮</span><div><h4>清明上河园 · 开封</h4><p>北宋市井风情，穿古装逛园子，孩子觉得新鲜。</p></div></div>
+        <div class="ext"><span class="e-ic">🐴</span><div><h4>白马寺 · 洛阳</h4><p>中国第一古刹，佛教传入之地，历史启蒙。</p></div></div>
       </div>
     </div>
   </section>
@@ -409,15 +441,15 @@ td.c-b{color:#b06f16}
         <thead><tr><th>比一比</th><th>云台山</th><th>玉龙沙湖</th></tr></thead>
         <tbody>
           <tr><td class="dim">交通</td><td class="c-a">高铁直达，约 4.5 小时</td><td class="c-b">高铁直达，约 2.5 小时</td></tr>
-          <tr><td class="dim">建议天数</td><td class="c-a">3 天 2 晚</td><td class="c-b">4 天 3 晚</td></tr>
-          <tr><td class="dim">玩法类型</td><td class="c-a">玩水 · 喂猴 · 看山水</td><td class="c-b">滑沙 · 骑骆驼 · 草原石林</td></tr>
-          <tr><td class="dim">核心体验</td><td class="c-a">红石峡踩水、猕猴谷喂猴、潭瀑峡溯溪</td><td class="c-b">滑沙骑骆驼、草原骑马、石林探险</td></tr>
+          <tr><td class="dim">建议天数</td><td class="c-a">4 天 3 晚</td><td class="c-b">4 天 3 晚</td></tr>
+          <tr><td class="dim">玩法类型</td><td class="c-a">玩水 · 喂猴 · 看山水 · 少林功夫</td><td class="c-b">滑沙 · 骑骆驼 · 草原石林</td></tr>
+          <tr><td class="dim">核心体验</td><td class="c-a">红石峡踩水、猕猴谷喂猴、少林寺看功夫</td><td class="c-b">滑沙骑骆驼、草原骑马、石林探险</td></tr>
           <tr><td class="dim">沿途可玩</td><td class="c-a">溶洞、神农山、游乐园、动物园、怪坡园</td><td class="c-b">桦木沟、道须沟、蛤蟆坝、王府、动物园</td></tr>
           <tr><td class="dim">体力消耗</td><td class="c-a">中等，节奏轻松</td><td class="c-b">较大，玩得野</td></tr>
           <tr><td class="dim">国庆拥挤度</td><td class="c-a">5A 热门但可控</td><td class="c-b">小众冷门，几乎不挤</td></tr>
-          <tr><td class="dim">接驳难度</td><td class="c-a">高铁直达，景区离市区近</td><td class="c-b">沙湖距市区较远，需包车</td></tr>
-          <tr><td class="dim">孩子的记忆点</td><td class="c-a">喂到猴子、踩到水</td><td class="c-b">滑到沙、骑到骆驼</td></tr>
-          <tr><td class="dim">一句话总结</td><td class="c-a">清凉省心、山水猴齐全</td><td class="c-b">塞外撒野、沙漠草原石林</td></tr>
+          <tr><td class="dim">接驳难度</td><td class="c-a">高铁直达，去少林寺需转短途车</td><td class="c-b">沙湖距市区较远，需包车</td></tr>
+          <tr><td class="dim">孩子的记忆点</td><td class="c-a">喂到猴、踩到水、看到真功夫</td><td class="c-b">滑到沙、骑到骆驼</td></tr>
+          <tr><td class="dim">一句话总结</td><td class="c-a">山水猴 + 少林功夫，动静结合</td><td class="c-b">塞外撒野、沙漠草原石林</td></tr>
         </tbody>
       </table>
     </div>
@@ -428,8 +460,8 @@ td.c-b{color:#b06f16}
     <div class="box pick-a">
       <h3>选云台山，如果…</h3>
       <ul>
-        <li>孩子喜欢玩水、看猴子，想要节奏轻松、路上不折腾。</li>
-        <li>3 天就够，想早点回家休息、不请太多假。</li>
+        <li>孩子喜欢玩水、看猴子，也想顺路看一场真功夫——少林寺就在旁边。</li>
+        <li>4 天 3 晚，山水 + 古刹 + 功夫一次看全，节奏依然从容。</li>
         <li>更看重「凉快 + 山水景色 + 亲子互动」，家长也省心。</li>
       </ul>
     </div>
