@@ -97,6 +97,20 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,B
 .ext h4{margin:0 0 2px;font-size:14.5px}
 .ext p{margin:0;font-size:12.5px;color:var(--muted)}
 
+/* 核心玩法 spotlight（紧凑左图右文卡片） */
+.fun-spots{display:grid;gap:14px;margin-top:6px}
+.fun-spot{display:flex;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.fun-spot .f-img{flex:0 0 40%;min-height:170px;overflow:hidden;background:#eef2f5}
+.fun-spot .f-img img{width:100%;height:100%;object-fit:cover;display:block}
+.fun-spot .f-txt{flex:1;padding:14px 18px;display:flex;flex-direction:column;justify-content:center}
+.fun-spot .f-txt h4{margin:0 0 6px;font-size:16.5px}
+.fun-spot .f-txt h4 .ic{margin-right:6px}
+.fun-spot .f-txt p{margin:0 0 6px;font-size:14px;color:#3f4b5f;line-height:1.65}
+.fun-spot .f-txt small{display:block;font-size:11.5px;color:var(--muted);margin-top:2px}
+@media(max-width:760px){.fun-spot{flex-direction:column}.fun-spot .f-img{flex:0 0 auto;height:190px}}
+.route-a .fun-spot:hover{border-color:var(--green-line)}
+.route-b .fun-spot:hover{border-color:var(--sand-line)}
+
 /* 少林寺 spotlight */
 .shaolin{display:flex;gap:18px;align-items:stretch;border:1px solid var(--green-line);background:var(--green-bg);border-radius:16px;padding:18px;margin-top:6px}
 @media(max-width:760px){.shaolin{flex-direction:column}}
@@ -146,7 +160,7 @@ td.c-b{color:#b06f16}
   <!-- ===================== 路线 A：云台山 ===================== -->
   <section class="route-block route-a">
     <div class="cover">
-      <img src="yuntaishan.png" alt="云台山红石峡" onerror="this.style.display='none'">
+      <img src="yuntaishan-cover.jpg" alt="云台山主峰云海" onerror="this.style.display='none'">
       <span class="badge">路线 A · 山水清凉</span>
       <span class="num">4 天 3 晚</span>
       <span class="caption">云台山红石峡 · 红岩碧水，亲水栈道</span>
@@ -163,27 +177,30 @@ td.c-b{color:#b06f16}
         <div class="fact"><b>门票需预约</b><span>国庆尽早锁定</span></div>
       </div>
 
-      <h3 class="sec"><span class="t">为什么孩子会爱上云台山</span><span class="d">三大招牌体验，逐个说清楚</span></h3>
-      <div class="fun-cards">
-        <div class="fun-card">
-          <span class="ic">💧</span>
-          <div>
-            <h4>红石峡 · 亲水栈道踩水打水仗</h4>
+      <h3 class="sec"><span class="t">为什么孩子会爱上云台山</span><span class="d">三大招牌体验，实拍图带你先看一眼</span></h3>
+      <div class="fun-spots">
+        <div class="fun-spot">
+          <div class="f-img"><img src="zifanghu.jpg" alt="云台山太行红叶与栈道" onerror="this.parentNode.style.display='none'"></div>
+          <div class="f-txt">
+            <h4><span class="ic">💧</span>红石峡 · 亲水栈道踩水打水仗</h4>
             <p>云台山最精华的一段，红色丹霞岩壁夹着一汪碧绿的溪水，木质栈道就贴着水面搭。孩子卷起裤腿就能踩水、打水仗、捞小鱼，凉快又好玩，拍照也出片。</p>
+            <small>图为云台山景区内子房湖秋色实景（红石峡为同景区子景点，栈道亲水风格相近）。</small>
           </div>
         </div>
-        <div class="fun-card">
-          <span class="ic">🐒</span>
-          <div>
-            <h4>猕猴谷 · 近距离喂太行猕猴</h4>
-            <p>野生太行猕猴就在身边，孩子可以近距离观察、投喂猴子，看它们抢食、打闹，全程「哇」声不断。是娃公认的保留节目，注意听从景区指引、别逗急了猴子。</p>
+        <div class="fun-spot">
+          <div class="f-img"><img src="yuntaishan-cover.jpg" alt="云台山主峰云海" onerror="this.parentNode.style.display='none'"></div>
+          <div class="f-txt">
+            <h4><span class="ic">🐒</span>猕猴谷 · 近距离喂太行猕猴</h4>
+            <p>野生太行猕猴就在身边，孩子可以近距离观察、投喂猴子，看它们抢食、打闹，全程「哇」声不断。是娃公认的保留节目，听从景区指引、别逗急了猴子。</p>
+            <small>图为云台山主峰云海实景，猕猴谷就藏在主峰山腰。</small>
           </div>
         </div>
-        <div class="fun-card">
-          <span class="ic">🛶</span>
-          <div>
-            <h4>潭瀑峡 · 清凉溯溪看瀑布</h4>
+        <div class="fun-spot">
+          <div class="f-img"><img src="tanpuxia.jpg" alt="云台山潭瀑峡" onerror="this.parentNode.style.display='none'"></div>
+          <div class="f-txt">
+            <h4><span class="ic">🛶</span>潭瀑峡 · 清凉溯溪看瀑布</h4>
             <p>三步一泉、五步一瀑，一路沿着溪流往上走，孩子边走边玩水，累了就在潭边歇脚，是整条路线里最凉快、最不累的一段。</p>
+            <small>图为潭瀑峡实景水面，与描述一致。</small>
           </div>
         </div>
       </div>
@@ -222,7 +239,7 @@ td.c-b{color:#b06f16}
 
       <h3 class="sec"><span class="t">少林寺一日 · 孩子会看什么</span><span class="d">功夫之乡，男孩女孩都着迷</span></h3>
       <div class="shaolin">
-        <div class="s-img"><img src="shaolinsi.png" alt="登封少林寺" onerror="this.style.display='none'"></div>
+        <div class="s-img"><img src="shaolin.jpg" alt="登封嵩山少林景区" onerror="this.style.display='none'"></div>
         <div class="s-txt">
           <p>少林寺是「天下功夫出少林」的地方，也是世界文化遗产。对刚上小学的孩子来说，这里不只是一座古庙，更是一个「电影里的功夫世界照进现实」的地方——亲眼看到武僧练功，比任何动画都震撼。</p>
           <div class="s-pts">
@@ -277,6 +294,14 @@ td.c-b{color:#b06f16}
           </div>
         </div>
         <div class="spot">
+          <div class="ph"><img src="zifanghu.jpg" alt="云台山子房湖·太行红叶" onerror="this.parentNode.style.display='none'"><span class="tag">景区实拍</span></div>
+          <div class="txt">
+            <h4>云台山子房湖 · 太行红叶</h4>
+            <p class="desc">子房湖位于云台山主景区内，两岸青山对峙夹一带绿水；秋季漫山红叶，彩虹桥横跨山谷。</p>
+            <p class="kid"><b>孩子玩点：</b>沿湖栈道散步、看红叶林、拍彩虹桥，秋色拉满，拍照出片。</p>
+          </div>
+        </div>
+        <div class="spot">
           <div class="ph"><img src="https://pic5.40017.cn/i/ori/1OyMEujkoIE.jpg" alt="河南沿线" onerror="this.parentNode.style.display='none'"><span class="tag">河南沿线</span></div>
           <div class="txt">
             <h4>还想再远一点？</h4>
@@ -298,7 +323,7 @@ td.c-b{color:#b06f16}
   <!-- ===================== 路线 B：玉龙沙湖 ===================== -->
   <section class="route-block route-b">
     <div class="cover">
-      <img src="yulongshahu.png" alt="玉龙沙湖沙漠" onerror="this.style.display='none'">
+      <img src="yulongshahu-cover.jpg" alt="玉龙沙湖沙漠" onerror="this.style.display='none'">
       <span class="badge">路线 B · 塞外撒野</span>
       <span class="num">4 天 3 晚</span>
       <span class="caption">玉龙沙湖 · 金色沙丘，骑骆驼走沙脊</span>
@@ -315,27 +340,30 @@ td.c-b{color:#b06f16}
         <div class="fact"><b>需包车接驳</b><span>沙湖距市区较远</span></div>
       </div>
 
-      <h3 class="sec"><span class="t">为什么孩子会爱上玉龙沙湖</span><span class="d">三大招牌体验，逐个说清楚</span></h3>
-      <div class="fun-cards">
-        <div class="fun-card">
-          <span class="ic">🏜️</span>
-          <div>
-            <h4>沙漠 · 滑沙骑骆驼、沙地越野</h4>
+      <h3 class="sec"><span class="t">为什么孩子会爱上玉龙沙湖</span><span class="d">三大招牌体验，实拍图带你先看一眼</span></h3>
+      <div class="fun-spots">
+        <div class="fun-spot">
+          <div class="f-img"><img src="yulongshahu-cover.jpg" alt="玉龙沙湖沙漠日落" onerror="this.parentNode.style.display='none'"></div>
+          <div class="f-txt">
+            <h4><span class="ic">🏜️</span>沙漠 · 滑沙骑骆驼、沙地越野</h4>
             <p>从高高的沙丘上一路滑下来，骑着骆驼慢悠悠走沙脊，再坐沙地越野车冲沙——沙漠里最经典的玩法一天全安排上，孩子疯玩到不想走。</p>
+            <small>图为玉龙沙湖沙漠日落实景。</small>
           </div>
         </div>
-        <div class="fun-card">
-          <span class="ic">🐎</span>
-          <div>
-            <h4>克什克腾草原 · 骑马撒欢</h4>
+        <div class="fun-spot">
+          <div class="f-img"><img src="caoyuan.jpg" alt="乌兰布统草原" onerror="this.parentNode.style.display='none'"></div>
+          <div class="f-txt">
+            <h4><span class="ic">🐎</span>克什克腾草原 · 骑马撒欢</h4>
             <p>在辽阔的草原上骑马，看牛羊成群、秋色金黄。孩子第一次离草原这么近，撒开腿跑，比任何游乐园都痛快。</p>
+            <small>图为乌兰布统草原晨雾与蒙古包实景（草原类风光代表）。</small>
           </div>
         </div>
-        <div class="fun-card">
-          <span class="ic">🪨</span>
-          <div>
-            <h4>石林 · 地质奇观探险</h4>
+        <div class="fun-spot">
+          <div class="f-img"><img src="shilin.jpg" alt="阿斯哈图石林" onerror="this.parentNode.style.display='none'"></div>
+          <div class="f-txt">
+            <h4><span class="ic">🪨</span>石林 · 冰川遗迹探险</h4>
             <p>阿斯哈图石林（克什克腾石阵）是冰川遗迹形成的花岗岩石林，一根根巨石立在草原上，像走进了巨人的石头阵，孩子一路「啊」个不停。</p>
+            <small>图为阿斯哈图石林标志性巨石实景。</small>
           </div>
         </div>
       </div>
