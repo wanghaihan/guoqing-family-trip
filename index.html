@@ -1,190 +1,449 @@
 <!doctype html>
-<html lang="zh-CN" data-page-node-id="d1LROapum2XRyGdGNRrAiq">
-<head data-page-node-id="llzChsAPAMHldsYXaENj9Z">
-<meta charset="UTF-8" data-page-node-id="ClWhNCwY9rHwRzTjfYeywe">
-<meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="LH4bgTRJCsvIhWAH7DFE2L">
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>国庆亲子游 · 两条路线怎么选</title>
 <style>
 :root{
   --text:#1f2733; --muted:#6b7480; --line:#e7ebef; --bg:#f6f8f9; --card:#fff;
-  --green:#22b35f; --green-dark:#15904a; --green-bg:#eefaf2;
-  --sand:#d98c2b; --sand-dark:#b86f1a; --sand-bg:#fdf4e7;
+  --green:#22b35f; --green-dark:#15904a; --green-bg:#eefaf2; --green-line:#cfe9da;
+  --sand:#d98c2b; --sand-dark:#b86f1a; --sand-bg:#fdf4e7; --sand-line:#f3e2c2;
   --blue:#2f6bd8;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.6}
-.page{max-width:1080px;margin:0 auto;padding:36px 22px 60px}
-/* hero */
-.hero{text-align:center;margin-bottom:34px}
-.hero .kicker{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--green-dark);background:var(--green-bg);border:1px solid #cfe9da;border-radius:999px;padding:6px 16px}
-.hero h1{margin:14px 0 8px;font-size:32px;line-height:1.3}
-.hero .sub{color:var(--muted);font-size:16px;max-width:640px;margin:0 auto}
-.hero .tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px}
-.hero .tags span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:13px;color:#3f4b5f}
-/* 两列 */
-.columns{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
-@media (max-width:820px){.columns{grid-template-columns:1fr}}
-.route{border-radius:18px;overflow:hidden;background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;box-shadow:0 10px 30px rgba(23,32,51,.05)}
-.route .cover{position:relative;height:230px;overflow:hidden}
-.route .cover img{width:100%;height:100%;object-fit:cover;display:block}
-.route .cover .badge{position:absolute;left:14px;top:14px;color:#fff;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;box-shadow:0 4px 12px rgba(0,0,0,.18)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7}
+.page{max-width:1080px;margin:0 auto;padding:36px 22px 70px}
+
+/* ===== Hero ===== */
+.hero{text-align:center;margin-bottom:40px}
+.hero .kicker{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--green-dark);background:var(--green-bg);border:1px solid var(--green-line);border-radius:999px;padding:6px 16px}
+.hero h1{margin:16px 0 10px;font-size:34px;line-height:1.3}
+.hero .sub{color:var(--muted);font-size:16px;max-width:680px;margin:0 auto}
+.hero .tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px}
+.hero .tags span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;color:#3f4b5f}
+
+/* ===== 路线大区块 ===== */
+.route-block{border-radius:22px;background:var(--card);border:1px solid var(--line);overflow:hidden;box-shadow:0 12px 34px rgba(23,32,51,.06);margin-bottom:36px}
+.route-block .cover{position:relative;height:300px;overflow:hidden}
+.route-block .cover img{width:100%;height:100%;object-fit:cover;display:block}
+.route-block .cover .badge{position:absolute;left:18px;top:18px;color:#fff;font-weight:800;font-size:15px;padding:8px 16px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.22)}
+.route-block .cover .num{position:absolute;right:18px;bottom:16px;background:rgba(0,0,0,.45);color:#fff;font-size:13px;padding:5px 12px;border-radius:8px}
+.route-block .cover .caption{position:absolute;left:18px;bottom:16px;color:#fff;font-size:14px;font-weight:600;text-shadow:0 1px 4px rgba(0,0,0,.4)}
 .route-a .cover .badge{background:var(--green)}
 .route-b .cover .badge{background:var(--sand)}
-.route .cover .num{position:absolute;right:14px;bottom:12px;background:rgba(0,0,0,.42);color:#fff;font-size:12px;padding:3px 10px;border-radius:6px}
-.route .body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:16px;flex:1}
-.route .title-row{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
-.route .title-row h2{margin:0;font-size:24px}
-.route .title-row .loc{color:var(--muted);font-size:14px;white-space:nowrap}
-.route .one-liner{font-size:15.5px;color:#333f4e;background:var(--green-bg);border:1px solid #dcefe2;border-radius:10px;padding:11px 14px;margin:0}
-.route-b .one-liner{background:var(--sand-bg);border-color:#f3e2c2}
-.route .facts{display:flex;gap:10px;flex-wrap:wrap}
-.route .fact{flex:1;min-width:110px;background:#f7f9fa;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
-.route .fact b{display:block;font-size:16px;color:var(--text)}
-.route .fact span{font-size:12px;color:var(--muted)}
+.route-block .inner{padding:28px 30px 34px}
+.route-block .head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.route-block .head h2{margin:0;font-size:30px}
+.route-block .head .loc{color:var(--muted);font-size:15px;white-space:nowrap}
+.route-block .one-liner{font-size:16.5px;color:#333f4e;border-radius:12px;padding:14px 18px;margin:0 0 18px}
+.route-a .one-liner{background:var(--green-bg);border:1px solid var(--green-line)}
+.route-b .one-liner{background:var(--sand-bg);border:1px solid var(--sand-line)}
+.route-block .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px}
+@media(max-width:640px){.route-block .facts{grid-template-columns:repeat(2,1fr)}}
+.route-block .fact{background:#f7f9fa;border:1px solid var(--line);border-radius:11px;padding:11px 13px}
+.route-block .fact b{display:block;font-size:16px}
+.route-block .fact span{font-size:12.5px;color:var(--muted)}
 .route-a .fact b{color:var(--green-dark)}
 .route-b .fact b{color:var(--sand-dark)}
-.route h3{font-size:15px;margin:0 0 10px;color:#2a3441}
-.route .fun-list{list-style:none;margin:0;padding:0;display:grid;gap:9px}
-.route .fun-list li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#3f4b5f}
-.route .fun-list .ic{flex:0 0 auto;width:24px;height:24px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px}
-.route-a .fun-list .ic{background:var(--green-bg)}
-.route-b .fun-list .ic{background:var(--sand-bg)}
-.route .thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:2px}
-.route .thumbs figure{margin:0;position:relative;overflow:hidden;border-radius:9px;height:82px;background:#eef2f5}
-.route .thumbs img{width:100%;height:100%;object-fit:cover;display:block}
-.route .thumbs figcaption{position:absolute;left:0;right:0;bottom:0;font-size:11px;color:#fff;padding:14px 6px 4px;background:linear-gradient(transparent,rgba(0,0,0,.6));white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
-/* 对比表 */
-.compare{margin-top:30px}
-.compare h2{font-size:20px;margin:0 0 14px;text-align:center}
-.table-wrap{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
-table{width:100%;border-collapse:collapse;font-size:14px}
-th,td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+
+/* 段落标题 */
+.route-block h3.sec{display:flex;align-items:center;gap:10px;font-size:19px;margin:26px 0 14px;padding-left:12px;border-left:4px solid}
+.route-a h3.sec{border-color:var(--green)}
+.route-b h3.sec{border-color:var(--sand)}
+.route-block h3.sec .t{font-weight:800}
+.route-block h3.sec .d{font-size:13px;color:var(--muted);font-weight:400}
+
+/* 核心玩法详解 */
+.fun-cards{display:grid;gap:12px}
+.fun-card{display:flex;gap:14px;padding:14px 16px;border:1px solid var(--line);border-radius:13px;background:#fff;align-items:flex-start}
+.route-a .fun-card:hover{border-color:var(--green-line);background:var(--green-bg)}
+.route-b .fun-card:hover{border-color:var(--sand-line);background:var(--sand-bg)}
+.fun-card .ic{flex:0 0 auto;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px}
+.route-a .fun-card .ic{background:var(--green-bg)}
+.route-b .fun-card .ic{background:var(--sand-bg)}
+.fun-card h4{margin:0 0 4px;font-size:16px}
+.fun-card p{margin:0;font-size:14.5px;color:#3f4b5f}
+
+/* 每日行程 */
+.days{display:grid;gap:12px}
+.day{display:flex;gap:14px;padding:14px 16px;border:1px solid var(--line);border-radius:13px;background:#fff}
+.day .d-tag{flex:0 0 auto;min-width:64px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:13.5px;font-weight:800;color:#fff}
+.route-a .day .d-tag{background:var(--green)}
+.route-b .day .d-tag{background:var(--sand)}
+.day .d-body h4{margin:0 0 3px;font-size:15px}
+.day .d-body p{margin:0;font-size:14px;color:#3f4b5f}
+
+/* 沿途还能玩 */
+.spots{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:640px){.spots{grid-template-columns:1fr}}
+.spot{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+.spot .ph{position:relative;height:140px;overflow:hidden;background:#eef2f5}
+.spot .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.spot .ph .tag{position:absolute;left:10px;top:10px;background:rgba(0,0,0,.5);color:#fff;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px}
+.spot .ph .score{position:absolute;right:10px;top:10px;background:#fff;color:#e08a12;font-size:11px;font-weight:800;padding:3px 8px;border-radius:999px;box-shadow:0 1px 4px rgba(0,0,0,.15)}
+.spot .txt{padding:12px 14px 14px}
+.spot .txt h4{margin:0 0 4px;font-size:15.5px}
+.spot .txt .desc{font-size:13.5px;color:var(--muted);margin:0 0 6px}
+.spot .txt .kid{font-size:13px;color:#3f4b5f;margin:0}
+.route-a .spot .txt .kid b{color:var(--green-dark)}
+.route-b .spot .txt .kid b{color:var(--sand-dark)}
+
+/* 可延伸 */
+.extend{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:640px){.extend{grid-template-columns:1fr}}
+.ext{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border:1px dashed var(--line);border-radius:12px;background:#fbfcfc}
+.ext .e-ic{flex:0 0 auto;font-size:22px}
+.ext h4{margin:0 0 2px;font-size:14.5px}
+.ext p{margin:0;font-size:12.5px;color:var(--muted)}
+
+/* ===== 对比表 ===== */
+.compare{margin-top:40px}
+.compare h2{font-size:22px;margin:0 0 16px;text-align:center}
+.table-wrap{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:520px}
+th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
 thead th{background:#f7f9fa;font-weight:800;color:#2a3441}
 tbody tr:last-child td{border-bottom:0}
-td.dim{color:var(--muted);white-space:nowrap;font-weight:600;width:130px}
+td.dim{color:var(--muted);white-space:nowrap;font-weight:600;width:120px}
 td.c-a{color:#1c7a43}
 td.c-b{color:#b06f16}
-/* 结论 */
-.conclusion{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
-@media (max-width:820px){.conclusion{grid-template-columns:1fr}}
-.conclusion .box{border-radius:14px;padding:18px 20px;border:1px solid var(--line);background:#fff}
-.conclusion .box h3{margin:0 0 8px;font-size:16px}
-.conclusion .box p{margin:0;color:#3f4b5f;font-size:14.5px}
-.conclusion .pick-a{border-color:#cfe9da;background:var(--green-bg)}
+
+/* ===== 结论 ===== */
+.conclusion{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:820px){.conclusion{grid-template-columns:1fr}}
+.conclusion .box{border-radius:16px;padding:20px 22px;border:1px solid var(--line);background:#fff}
+.conclusion .box h3{margin:0 0 10px;font-size:17px}
+.conclusion .box ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.conclusion .box li{font-size:14px;color:#3f4b5f}
+.conclusion .pick-a{border-color:var(--green-line);background:var(--green-bg)}
 .conclusion .pick-a h3{color:var(--green-dark)}
-.conclusion .pick-b{border-color:#f3e2c2;background:var(--sand-bg)}
+.conclusion .pick-b{border-color:var(--sand-line);background:var(--sand-bg)}
 .conclusion .pick-b h3{color:var(--sand-dark)}
-.footnote{margin-top:30px;text-align:center;color:var(--muted);font-size:12.5px}
+.footnote{margin-top:32px;text-align:center;color:var(--muted);font-size:12.5px;max-width:720px;margin-left:auto;margin-right:auto}
 </style>
 </head>
-<body data-page-node-id="U6pl4pIcEYIkYy5nWIDSK0">
-<main class="page" data-page-node-id="8rkLFUJdPiGH7dxPGze5D8">
-  <header class="hero" data-page-node-id="ghWdSg92cBtSnOdQejVVrQ">
-    <span class="kicker" data-page-node-id="KkygKrK9JCQ3pRB5HPAyiS">国庆亲子游 · 爸爸带两个小学生</span>
-    <h1 data-page-node-id="qmhc5H4OKOiZFtyz8raGtG">两条路线，到底哪条更好玩？</h1>
-    <p class="sub" data-page-node-id="FUAnc5XLrGJqeDIIsin7kN">北京出发，避开人海，3～4 天。一张图看懂「玩水看猴的云台山」和「撒野看沙的玉龙沙湖」哪个更适合咱们家。</p>
-    <div class="tags" data-page-node-id="xk2zxC4cjnBICQdE4MaKFj"><span data-page-node-id="UGGG4PfOTGHEReCqW5xsCV">🚗 北京出发</span><span data-page-node-id="6foImrDUyKsrGnePXfVPPe">👨‍👧‍👦 带 2 个娃</span><span data-page-node-id="xZY3FyMDAQxPcDU5fb97Gl">⛰️ 纯内陆 · 不靠海</span><span data-page-node-id="NSqWVkC2Rf9dz6nyEvHwZG">🎒 避开高峰人群</span></div>
+<body>
+<main class="page">
+  <header class="hero">
+    <span class="kicker">国庆亲子游 · 爸爸带两个小学生</span>
+    <h1>两条路线，到底哪条更好玩？</h1>
+    <p class="sub">北京出发，避开人海，3～4 天。一条玩水看猴、清凉省心；一条滑沙骑骆驼、塞外撒野。下面把两条路线掰开揉碎讲清楚，方便咱们全家一起拍板。</p>
+    <div class="tags"><span>🚗 北京出发</span><span>👨‍👧‍👦 带 2 个娃</span><span>⛰️ 纯内陆 · 不靠海</span><span>🎒 避开高峰人群</span><span>🕒 3～4 天</span></div>
   </header>
 
-  <div class="columns" data-page-node-id="8jl4Es7TZnZTOa8XbdN7kP">
-    <!-- 路线 A：云台山 -->
-    <section class="route route-a" data-page-node-id="cDu0PfwkIvxbjXaoGZFSRu">
-      <div class="cover" data-page-node-id="KW9wur5X3i3E63n0sgG6Ce">
-        <img src="yuntaishan.png" alt="云台山红石峡" onerror="this.style.display='none'" data-page-node-id="I0s1eI1JKLoabTuzMhwBB2">
-        <span class="badge" data-page-node-id="T1cQEFX6gHqYIFdwDk7mHj">路线 A · 山水清凉</span>
-        <span class="num" data-page-node-id="UMafq4zI2LVg6kE1VeZXVV">3 天 2 晚</span>
+  <!-- ===================== 路线 A：云台山 ===================== -->
+  <section class="route-block route-a">
+    <div class="cover">
+      <img src="yuntaishan.png" alt="云台山红石峡" onerror="this.style.display='none'">
+      <span class="badge">路线 A · 山水清凉</span>
+      <span class="num">3 天 2 晚</span>
+      <span class="caption">云台山红石峡 · 红岩碧水，亲水栈道</span>
+    </div>
+    <div class="inner">
+      <div class="head"><h2>云台山</h2><span class="loc">河南 · 焦作 · 修武县</span></div>
+      <p class="one-liner">人称「北方小九寨」，红石峡踩水打水仗 + 猕猴谷喂猴子 + 潭瀑峡溯溪看瀑布，山、水、猴一次集齐，10 月水量好、红叶渐起，正是最好看的季节。</p>
+      <div class="facts">
+        <div class="fact"><b>高铁直达</b><span>约 4.5 小时</span></div>
+        <div class="fact"><b>5A 级景区</b><span>云台山主景区</span></div>
+        <div class="fact"><b>最佳季</b><span>10 月水景 + 红叶</span></div>
+        <div class="fact"><b>体力中等</b><span>节奏轻松不赶</span></div>
+        <div class="fact"><b>3 天 2 晚</b><span>高铁往返刚好</span></div>
+        <div class="fact"><b>门票需预约</b><span>国庆尽早锁定</span></div>
       </div>
-      <div class="body" data-page-node-id="lpmI475k5Ut8Eb7bontPwA">
-        <div class="title-row" data-page-node-id="aEtAqESwktMWKsP3uuIwzr"><h2 data-page-node-id="gpAuYZQomVpEBTxmg4J79A">云台山</h2><span class="loc" data-page-node-id="jSLCzGNJHgjMllSPgModZl">河南 · 焦作</span></div>
-        <p class="one-liner" data-page-node-id="QC13rFK1EpghFbNdNt1oG4">「北方小九寨」，红石峡玩水 + 猕猴谷喂猴，山水猴一次集齐。</p>
-        <div class="facts" data-page-node-id="06ZtcJSaT9b23CSjXFKL8I">
-          <div class="fact" data-page-node-id="gzgE8mD6w9ly7piL9INqOf"><b data-page-node-id="jEHcJUNmFYacTAt9s2WQPh">高铁直达</b><span data-page-node-id="YjIOcIGsnnEmZlmmBcmmlO">约 4.5 小时</span></div>
-          <div class="fact" data-page-node-id="64rCuHTFB1EHhX9clgYUxH"><b data-page-node-id="geLmeP2jIfLBowT5qJ7Ic1">5A 景区</b><span data-page-node-id="yyuv4sKH8jBZccErZ2nCMK">水景红叶最佳季</span></div>
-          <div class="fact" data-page-node-id="HK7eGvMfemRRVxv1fpdrws"><b data-page-node-id="tuv93TVOzbgyF5i61wpLoG">体力中等</b><span data-page-node-id="3A2CDNnmyXwVWZMPO5L91B">节奏轻松</span></div>
+
+      <h3 class="sec"><span class="t">为什么孩子会爱上云台山</span><span class="d">三大招牌体验，逐个说清楚</span></h3>
+      <div class="fun-cards">
+        <div class="fun-card">
+          <span class="ic">💧</span>
+          <div>
+            <h4>红石峡 · 亲水栈道踩水打水仗</h4>
+            <p>云台山最精华的一段，红色丹霞岩壁夹着一汪碧绿的溪水，木质栈道就贴着水面搭。孩子卷起裤腿就能踩水、打水仗、捞小鱼，凉快又好玩，拍照也出片。</p>
+          </div>
         </div>
-        <div data-page-node-id="iqGVogMoH4eCE1PHkUqJDE">
-          <h3 data-page-node-id="gB61SgjxZvZyUbM5jMCnG5">孩子最爱的三个点</h3>
-          <ul class="fun-list" data-page-node-id="OY56LlbHqtgI0PzvKZu9JI">
-            <li data-page-node-id="vMizbXBHVwhaHPUhyBIWP7"><span class="ic" data-page-node-id="DUAYxNo0M9jnhKc9IAFSFc">💧</span>红石峡亲水栈道踩水、打水仗</li>
-            <li data-page-node-id="0HUal32wkg05O3xyPqCSRO"><span class="ic" data-page-node-id="gL96GCaC98hogj9CJ6iypf">🐒</span>猕猴谷近距离喂猴子</li>
-            <li data-page-node-id="imPyV3reG91TzcsYtVe75P"><span class="ic" data-page-node-id="pwljlHg1gNZUlMk9ZVChQE">🛶</span>潭瀑峡清凉溯溪、看瀑布</li>
-          </ul>
+        <div class="fun-card">
+          <span class="ic">🐒</span>
+          <div>
+            <h4>猕猴谷 · 近距离喂太行猕猴</h4>
+            <p>野生太行猕猴就在身边，孩子可以近距离观察、投喂猴子，看它们抢食、打闹，全程「哇」声不断。是娃公认的保留节目，注意听从景区指引、别逗急了猴子。</p>
+          </div>
         </div>
-        <div data-page-node-id="c61tdzHkH1mvLCJ2nXmJj8">
-          <h3 data-page-node-id="GcKetQcYKmWYNCUnleH3Y6">沿途还能玩</h3>
-          <div class="thumbs" data-page-node-id="6JL8gFBHI1eUL7HZYh5RbL">
-            <figure data-page-node-id="UbL4HauRFDrksT1Wx3aewk"><img src="https://pic5.40017.cn/i/ori/1ees2QBKn7i.jpg" alt="" onerror="this.parentNode.style.display='none'" data-page-node-id="HTNSuG6lhGoM75LSDEPfmB"><figcaption data-page-node-id="UDsDWwlJjESK69OXHyfm3k">云台溶洞</figcaption></figure>
-            <figure data-page-node-id="8VEJNOdgounvrmSplTQ4MT"><img src="https://pic4.40017.cn/scenery/destination/2017/01/03/15/moSfNy.jpg" alt="" onerror="this.parentNode.style.display='none'" data-page-node-id="TIK9pMvPq5EHurhEwFRAyZ"><figcaption data-page-node-id="7MsVeZrs50TwNhCJsaFMYA">怪坡园</figcaption></figure>
-            <figure data-page-node-id="keq2FjZmqNxD62zNSM2TdR"><img src="https://pic5.40017.cn/i/ori/15XBeAIIrfi.jpg" alt="" onerror="this.parentNode.style.display='none'" data-page-node-id="KlD5MYeY1UQQlDhSzoDUVn"><figcaption data-page-node-id="AfsAwHBSSg9oGXD4kDPPEM">森林动物园</figcaption></figure>
+        <div class="fun-card">
+          <span class="ic">🛶</span>
+          <div>
+            <h4>潭瀑峡 · 清凉溯溪看瀑布</h4>
+            <p>三步一泉、五步一瀑，一路沿着溪流往上走，孩子边走边玩水，累了就在潭边歇脚，是整条路线里最凉快、最不累的一段。</p>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- 路线 B：玉龙沙湖 -->
-    <section class="route route-b" data-page-node-id="ZafT1vZTOmkOn6AjRrkMEo">
-      <div class="cover" data-page-node-id="6bj5w3FvL2tj87ZOBmwGTg">
-        <img src="yulongshahu.png" alt="玉龙沙湖沙漠" onerror="this.style.display='none'" data-page-node-id="nwm4DRa1Y4vIFB7s0CM5Jv">
-        <span class="badge" data-page-node-id="jxPQvoKvwaglQfLMUOfFPn">路线 B · 塞外撒野</span>
-        <span class="num" data-page-node-id="S1LMx6rE49OuRCCW5BwOq2">4 天 3 晚</span>
-      </div>
-      <div class="body" data-page-node-id="X6W28AVVOWAeVQ9EdD0wiw">
-        <div class="title-row" data-page-node-id="fQfITMcJhNe6U3A88A93Uk"><h2 data-page-node-id="b9JnECE9G3Cu9yKEzyDPpB">玉龙沙湖</h2><span class="loc" data-page-node-id="51HZcISehNjmRHyofVWt5M">内蒙古 · 赤峰</span></div>
-        <p class="one-liner" data-page-node-id="FVUFSj2PPUk9zP36qjKXVP">沙漠 + 草原 + 石林三合一，滑沙骑骆驼，塞外风光绝无仅有。</p>
-        <div class="facts" data-page-node-id="dewHXhBNoE8ocaOZhq0jmE">
-          <div class="fact" data-page-node-id="ex9uTRu0olmmlmx6CXxfTz"><b data-page-node-id="A7Rw7GWteSpZ8OzXs6xQ11">高铁直达</b><span data-page-node-id="lVgeHhTYibc0GxvHDd3mai">约 2.5 小时</span></div>
-          <div class="fact" data-page-node-id="CQ8qcNNluc0k12Y8X62pCJ"><b data-page-node-id="mrVbRz6wBthwtJFtGa8AH3">小众冷门</b><span data-page-node-id="N8u0UTyNicdupvuWpEm126">几乎不挤</span></div>
-          <div class="fact" data-page-node-id="FBUyApUEPbPMuLkYjCy2HB"><b data-page-node-id="eIHFySBmYb8g8tvueu6f2y">体力较大</b><span data-page-node-id="sayYpJyLXqxIG3CyShflXa">玩得野</span></div>
+      <h3 class="sec"><span class="t">3 天怎么玩</span><span class="d">大致节奏，先有个数</span></h3>
+      <div class="days">
+        <div class="day">
+          <span class="d-tag">Day 1</span>
+          <div class="d-body">
+            <h4>高铁到焦作 · 入住云台山脚下</h4>
+            <p>北京坐高铁直达焦作（约 4.5 小时），转短途到云台山脚下的酒店住下，早点休息、养精蓄锐，第二天起个大早进山。</p>
+          </div>
         </div>
-        <div data-page-node-id="8pdCDvCFxdRSHEegzuJxqd">
-          <h3 data-page-node-id="lUqezyuq0L3apQf7HHhu52">孩子最爱的三个点</h3>
-          <ul class="fun-list" data-page-node-id="GeX8rpVMXv5KOUe4lKHqEc">
-            <li data-page-node-id="7AhiqWHDiEEoOALe57yDDK"><span class="ic" data-page-node-id="x7jAcwqwoliAtYkZYhuZDk">🏜️</span>滑沙、骑骆驼、沙地越野</li>
-            <li data-page-node-id="ZR5YiBZm1sf1iuZvs5z0Ta"><span class="ic" data-page-node-id="FDwePURRF9OrvnE1ukDkSG">🐎</span>克什克腾草原骑马撒欢</li>
-            <li data-page-node-id="cq5bRP6346jQHJJHJbB4uL"><span class="ic" data-page-node-id="LTU9IijBD3pW9f9Y2EptJN">🪨</span>石林地质奇观探险</li>
-          </ul>
+        <div class="day">
+          <span class="d-tag">Day 2</span>
+          <div class="d-body">
+            <h4>云台山主景区一整天</h4>
+            <p>上午先走红石峡（精华段，趁人少先玩），下午潭瀑峡溯溪 + 猕猴谷喂猴子。晚上回焦作市区，尝一碗当地烩面。</p>
+          </div>
         </div>
-        <div data-page-node-id="B7pt3w5mhs12jwo8SG98bk">
-          <h3 data-page-node-id="MmdGCyteuT3IKYDCMCrUMI">沿途还能玩</h3>
-          <div class="thumbs" data-page-node-id="Vr7RpVAAKVXwgvAcFiyG0s">
-            <figure data-page-node-id="CSstWY4BvNZPEIZwNopcDJ"><img src="https://pic5.40017.cn/i/ori/1uXlZWGUwWk.jpg" alt="" onerror="this.parentNode.style.display='none'" data-page-node-id="8ehaUF5hp2Q94BdZtVrUII"><figcaption data-page-node-id="5YXKC34C7Gk3m8t8EgQ8wK">桦木沟草原</figcaption></figure>
-            <figure data-page-node-id="5ZzZq6KQiGIiqB8f0UE5Ek"><img src="https://pic5.40017.cn/02/000/51/cb/rBLkCVtEhByAf1Z1AAMAsbF8KxQ694.jpg" alt="" onerror="this.parentNode.style.display='none'" data-page-node-id="v6lWdG3c7mxfo8JuIEy69a"><figcaption data-page-node-id="WVtACzezL47q9QErjWj6v5">蛤蟆坝沙草</figcaption></figure>
-            <figure data-page-node-id="mV8sdl8qhDWqH2tdFpLSa7"><img src="https://pic5.40017.cn/i/ori/1aReHes5g0E.jpg" alt="" onerror="this.parentNode.style.display='none'" data-page-node-id="wUUEsAD7KGhAfsC8Xdr9md"><figcaption data-page-node-id="OyATBoaF9k3ZUPcMQeSjA9">王府博物馆</figcaption></figure>
+        <div class="day">
+          <span class="d-tag">Day 3</span>
+          <div class="d-body">
+            <h4>补一个轻松项目 · 返京</h4>
+            <p>上午按孩子兴趣挑一个轻松的（云台溶洞钻洞，或怪坡园看「水往高处流」），下午高铁返京，晚饭前到家。</p>
           </div>
         </div>
       </div>
-    </section>
-  </div>
 
-  <section class="compare" data-page-node-id="FtzNPEGKSdQ2ntAYKg3ekZ">
-    <h2 data-page-node-id="aNenThgroqoq2wzoAilq6q">一张表看明白</h2>
-    <div class="table-wrap" data-page-node-id="iRXoQyUKyyjmupICznurrc">
-      <table data-page-node-id="c0Ir6IQ99Y5sQhZ7zRd159">
-        <thead data-page-node-id="FTrNTVyy50ibLQ6XjNpokB"><tr data-page-node-id="hr3rPGOCeDkpWAIVOp6Vmd"><th data-page-node-id="fS4Kcr1SUS4V9k71uCGckA">比一比</th><th data-page-node-id="iyXrtnAJcXWmgGAztGSK0m">云台山</th><th data-page-node-id="nb9Zz75MMgP6ikgN8JYblb">玉龙沙湖</th></tr></thead>
-        <tbody data-page-node-id="pFi0LFkQCmTj5MGQx5W0h4">
-          <tr data-page-node-id="OFSmVHW9mmcmEBzzZeTgHH"><td class="dim" data-page-node-id="sdpTlX6Pr0RtftS1OeijDH">交通</td><td class="c-a" data-page-node-id="AjlLdX8r22bBYlwOp1HCoG">高铁直达，约 4.5 小时</td><td class="c-b" data-page-node-id="ANKPUGSfCPhVW8tRQ0aFY0">高铁直达，约 2.5 小时</td></tr>
-          <tr data-page-node-id="eWT8wypShghYxEgSkr4YmR"><td class="dim" data-page-node-id="FhV1RegvGFZqr95Ob5WARB">建议天数</td><td class="c-a" data-page-node-id="vuFArPPp2bJZujjUn0Hrc7">3 天 2 晚</td><td class="c-b" data-page-node-id="cBmWMZ4Gbd6h9DMzHEz1YF">4 天 3 晚</td></tr>
-          <tr data-page-node-id="sIdgwnXTgHxOGD9Ai5JBX3"><td class="dim" data-page-node-id="GIYpVf8Xv8xFb4VNmUTvBW">玩法类型</td><td class="c-a" data-page-node-id="5EBNcvZ8OPeYodaRGjGLMd">玩水 · 喂猴 · 看山水</td><td class="c-b" data-page-node-id="yOC27nAL2Bl8JGbamTGFzl">滑沙 · 骑骆驼 · 草原石林</td></tr>
-          <tr data-page-node-id="odNePXSSqMGFqCVabn4bAk"><td class="dim" data-page-node-id="9eASDl8FXlpJXbwf2022bX">体力消耗</td><td class="c-a" data-page-node-id="5yJhoBxMA19rAyPLFRa1J2">中等，节奏轻松</td><td class="c-b" data-page-node-id="9ViCtCHm4P3Ng411zYVp5h">较大，玩得野</td></tr>
-          <tr data-page-node-id="IVC3x2TNslo3C1H4uEotHU"><td class="dim" data-page-node-id="Zprh7tVvnC0qg64D4GWtEA">国庆拥挤度</td><td class="c-a" data-page-node-id="IR83qaBltIB9EnWbv7hYvH">5A 热门但可控</td><td class="c-b" data-page-node-id="5zBT45FwMAG00ATBhfFpxw">小众冷门，几乎不挤</td></tr>
-          <tr data-page-node-id="q2390LkfGjAId1udUAMGD2"><td class="dim" data-page-node-id="NoqQG5HJVb2Yv8OO08oCqB">孩子的记忆点</td><td class="c-a" data-page-node-id="2JUJELjSRszHsnfWYI56BM">喂到猴子、踩到水</td><td class="c-b" data-page-node-id="ELfNRiHiVTQoUDuCAWLOti">滑到沙、骑到骆驼</td></tr>
+      <h3 class="sec"><span class="t">沿途还能玩</span><span class="d">焦作本地就有这些，顺路就能安排</span></h3>
+      <div class="spots">
+        <div class="spot">
+          <div class="ph"><img src="https://pic5.40017.cn/i/ori/1ees2QBKn7i.jpg" alt="云台溶洞" onerror="this.parentNode.style.display='none'"><span class="tag">峡谷溶洞</span><span class="score">★ 5.0</span></div>
+          <div class="txt">
+            <h4>云台溶洞</h4>
+            <p class="desc">位于修武县西村乡，钟乳石溶洞，洞里常年清凉。</p>
+            <p class="kid"><b>孩子玩点：</b>钻溶洞探秘，看石笋、石钟乳的千奇百怪，凉快又长见识。</p>
+          </div>
+        </div>
+        <div class="spot">
+          <div class="ph"><img src="https://pic5.40017.cn/i/ori/1nqZ7qXEY2B.jpg" alt="神农山" onerror="this.parentNode.style.display='none'"><span class="tag">5A 森林公园</span><span class="score">★ 4.6</span></div>
+          <div class="txt">
+            <h4>焦作神农山</h4>
+            <p class="desc">「神农白鹤松，九州一奇观」，可坐缆车上下，玩约 1 天。</p>
+            <p class="kid"><b>孩子玩点：</b>缆车上山看白鹤松、龙脊长城，视野开阔，比纯爬山省力。</p>
+          </div>
+        </div>
+        <div class="spot">
+          <div class="ph"><img src="https://pic5.40017.cn/i/ori/Pw92BlizXa.jpg" alt="承享欢乐世界" onerror="this.parentNode.style.display='none'"><span class="tag">游乐园</span></div>
+          <div class="txt">
+            <h4>承享欢乐世界</h4>
+            <p class="desc">「海陆空三栖游乐体验」于一体的大型乐园。</p>
+            <p class="kid"><b>孩子玩点：</b>水乐园 + 陆乐园，各种游乐设施放电，玩水玩项目一次满足。</p>
+          </div>
+        </div>
+        <div class="spot">
+          <div class="ph"><img src="https://pic5.40017.cn/i/ori/15XBeAIIrfi.jpg" alt="焦作森林动物园" onerror="this.parentNode.style.display='none'"><span class="tag">动物园</span></div>
+          <div class="txt">
+            <h4>焦作森林动物园</h4>
+            <p class="desc">森林里的动物园，环境自然。</p>
+            <p class="kid"><b>孩子玩点：</b>近距离看动物、体验喂食，孩子和动物互动最开心。</p>
+          </div>
+        </div>
+        <div class="spot">
+          <div class="ph"><img src="https://pic4.40017.cn/scenery/destination/2017/01/03/15/moSfNy.jpg" alt="焦作怪坡园" onerror="this.parentNode.style.display='none'"><span class="tag">儿童乐园</span><span class="score">★ 4.6</span></div>
+          <div class="txt">
+            <h4>焦作怪坡园</h4>
+            <p class="desc">「难以破解的自然之谜，神奇无比的科技奇观」，玩 2～3 小时。</p>
+            <p class="kid"><b>孩子玩点：</b>车往坡上溜、水往高处流，孩子觉得神奇又好玩，好奇心拉满。</p>
+          </div>
+        </div>
+        <div class="spot">
+          <div class="ph"><img src="https://pic5.40017.cn/i/ori/1OyMEujkoIE.jpg" alt="河南沿线" onerror="this.parentNode.style.display='none'"><span class="tag">河南沿线</span></div>
+          <div class="txt">
+            <h4>还想再远一点？</h4>
+            <p class="desc">云台山地处河南，顺路可往洛阳、开封方向延伸。</p>
+            <p class="kid"><b>可选方向：</b>少林寺（登封）、龙门石窟（洛阳）、清明上河园（开封）。</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sec"><span class="t">可顺路延伸</span><span class="d">多请一天假，就能多逛一座城</span></h3>
+      <div class="extend">
+        <div class="ext"><span class="e-ic">🥋</span><div><h4>少林寺 · 登封</h4><p>功夫发源地，看武僧表演、塔林，男孩多半会迷上。</p></div></div>
+        <div class="ext"><span class="e-ic">🪨</span><div><h4>龙门石窟 · 洛阳</h4><p>千年石窟群，顺带历史启蒙，震撼又有文化。</p></div></div>
+        <div class="ext"><span class="e-ic">🏮</span><div><h4>清明上河园 · 开封</h4><p>北宋市井风情，穿古装逛园子，孩子觉得新鲜。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 路线 B：玉龙沙湖 ===================== -->
+  <section class="route-block route-b">
+    <div class="cover">
+      <img src="yulongshahu.png" alt="玉龙沙湖沙漠" onerror="this.style.display='none'">
+      <span class="badge">路线 B · 塞外撒野</span>
+      <span class="num">4 天 3 晚</span>
+      <span class="caption">玉龙沙湖 · 金色沙丘，骑骆驼走沙脊</span>
+    </div>
+    <div class="inner">
+      <div class="head"><h2>玉龙沙湖</h2><span class="loc">内蒙古 · 赤峰</span></div>
+      <p class="one-liner">沙漠 + 草原 + 石林三合一，滑沙、骑骆驼、沙地越野，再看克什克腾草原骑马、石林奇观。人少景野，塞外风光对孩子是全新的世界。</p>
+      <div class="facts">
+        <div class="fact"><b>高铁直达</b><span>约 2.5 小时</span></div>
+        <div class="fact"><b>小众冷门</b><span>几乎不挤</span></div>
+        <div class="fact"><b>三合一</b><span>沙漠·草原·石林</span></div>
+        <div class="fact"><b>体力较大</b><span>玩得野</span></div>
+        <div class="fact"><b>4 天 3 晚</b><span>时间更充裕</span></div>
+        <div class="fact"><b>需包车接驳</b><span>沙湖距市区较远</span></div>
+      </div>
+
+      <h3 class="sec"><span class="t">为什么孩子会爱上玉龙沙湖</span><span class="d">三大招牌体验，逐个说清楚</span></h3>
+      <div class="fun-cards">
+        <div class="fun-card">
+          <span class="ic">🏜️</span>
+          <div>
+            <h4>沙漠 · 滑沙骑骆驼、沙地越野</h4>
+            <p>从高高的沙丘上一路滑下来，骑着骆驼慢悠悠走沙脊，再坐沙地越野车冲沙——沙漠里最经典的玩法一天全安排上，孩子疯玩到不想走。</p>
+          </div>
+        </div>
+        <div class="fun-card">
+          <span class="ic">🐎</span>
+          <div>
+            <h4>克什克腾草原 · 骑马撒欢</h4>
+            <p>在辽阔的草原上骑马，看牛羊成群、秋色金黄。孩子第一次离草原这么近，撒开腿跑，比任何游乐园都痛快。</p>
+          </div>
+        </div>
+        <div class="fun-card">
+          <span class="ic">🪨</span>
+          <div>
+            <h4>石林 · 地质奇观探险</h4>
+            <p>阿斯哈图石林（克什克腾石阵）是冰川遗迹形成的花岗岩石林，一根根巨石立在草原上，像走进了巨人的石头阵，孩子一路「啊」个不停。</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sec"><span class="t">4 天怎么玩</span><span class="d">大致节奏，先有个数</span></h3>
+      <div class="days">
+        <div class="day">
+          <span class="d-tag">Day 1</span>
+          <div class="d-body">
+            <h4>高铁到赤峰 · 市区逛逛</h4>
+            <p>北京坐高铁直达赤峰（约 2.5 小时），下午在市区逛逛红山公园、桥北动物园，早早入住休息。</p>
+          </div>
+        </div>
+        <div class="day">
+          <span class="d-tag">Day 2</span>
+          <div class="d-body">
+            <h4>玉龙沙湖一整天</h4>
+            <p>包车前往玉龙沙湖，滑沙、骑骆驼、沙地越野，晚上可以住沙湖附近，抬头就是满天星。</p>
+          </div>
+        </div>
+        <div class="day">
+          <span class="d-tag">Day 3</span>
+          <div class="d-body">
+            <h4>草原 + 石林</h4>
+            <p>克什克腾草原骑马撒欢，接着去阿斯哈图石林看地质奇观，一天看尽草原与石林。</p>
+          </div>
+        </div>
+        <div class="day">
+          <span class="d-tag">Day 4</span>
+          <div class="d-body">
+            <h4>看秋色 · 返京</h4>
+            <p>上午可选桦木沟或蛤蟆坝看五彩秋色、拍照，下午高铁返京。</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sec"><span class="t">沿途还能玩</span><span class="d">赤峰周边这些，顺路就能安排</span></h3>
+      <div class="spots">
+        <div class="spot">
+          <div class="ph"><img src="https://pic5.40017.cn/i/ori/1uXlZWGUwWk.jpg" alt="桦木沟" onerror="this.parentNode.style.display='none'"><span class="tag">森林公园</span><span class="score">★ 5.0</span></div>
+          <div class="txt">
+            <h4>桦木沟国家森林公园</h4>
+            <p class="desc">「油彩画廊，摄影天堂」，秋季白桦林五彩斑斓。</p>
+            <p class="kid"><b>孩子玩点：</b>看一整片金黄的白桦林，捡落叶、拍照，秋色美到不像话。</p>
+          </div>
+        </div>
+        <div class="spot">
+          <div class="ph"><img src="https://pic5.40017.cn/02/000/79/ae/rBLkCFj14SmAEjV5AAQAAGpCUws003.jpg" alt="道须沟" onerror="this.parentNode.style.display='none'"><span class="tag">4A 森林公园</span><span class="score">★ 4.7</span></div>
+          <div class="txt">
+            <h4>道须沟风景区</h4>
+            <p class="desc">「塞外版纳、天然博物馆」，可玩 1～2 天。</p>
+            <p class="kid"><b>孩子玩点：</b>瀑布、奇石、原始森林，天然大氧吧，边走边探险。</p>
+          </div>
+        </div>
+        <div class="spot">
+          <div class="ph"><img src="https://pic5.40017.cn/02/000/51/cb/rBLkCVtEhByAf1Z1AAMAsbF8KxQ694.jpg" alt="蛤蟆坝" onerror="this.parentNode.style.display='none'"><span class="tag">沙漠草原</span><span class="score">★ 5.0</span></div>
+          <div class="txt">
+            <h4>蛤蟆坝景区</h4>
+            <p class="desc">「秋季绚丽」，沙草相接的摄影胜地，玩约 3 小时。</p>
+            <p class="kid"><b>孩子玩点：</b>看沙丘与草原相连的奇景，随手一拍都是大片。</p>
+          </div>
+        </div>
+        <div class="spot">
+          <div class="ph"><img src="https://pic5.40017.cn/i/ori/1aReHes5g0E.jpg" alt="喀喇沁旗王府博物馆" onerror="this.parentNode.style.display='none'"><span class="tag">4A 博物馆</span><span class="score">★ 5.0</span></div>
+          <div class="txt">
+            <h4>喀喇沁旗王府博物馆</h4>
+            <p class="desc">国家三级古建兼历史陈列类博物馆，清代蒙古王府。</p>
+            <p class="kid"><b>孩子玩点：</b>看古建筑、听王爷府的故事，边玩边学点历史。</p>
+          </div>
+        </div>
+        <div class="spot">
+          <div class="ph"><img src="https://pic5.40017.cn/i/ori/1lMJ6yKZJLO.jpg" alt="桥北动物园" onerror="this.parentNode.style.display='none'"><span class="tag">动物园</span></div>
+          <div class="txt">
+            <h4>桥北动物园</h4>
+            <p class="desc">赤峰市区里的休闲好去处。</p>
+            <p class="kid"><b>孩子玩点：</b>到达当天或返程前顺路看看动物，轻松不累。</p>
+          </div>
+        </div>
+        <div class="spot">
+          <div class="ph"><img src="https://pic5.40017.cn/i/ori/1Ho9t7nANxe.jpg" alt="萌动动物乐园" onerror="this.parentNode.style.display='none'"><span class="tag">动物园</span></div>
+          <div class="txt">
+            <h4>萌动动物乐园</h4>
+            <p class="desc">近距离接触小动物的休闲乐园。</p>
+            <p class="kid"><b>孩子玩点：</b>喂小兔子、看萌宠，小龄段也合适。</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sec"><span class="t">可顺路延伸</span><span class="d">多留一天，草原深处更精彩</span></h3>
+      <div class="extend">
+        <div class="ext"><span class="e-ic">🌾</span><div><h4>乌兰布统草原</h4><p>坝上草原秋色一绝，影视剧取景地，骑马看草原。</p></div></div>
+        <div class="ext"><span class="e-ic">🦢</span><div><h4>达里湖 · 达达线</h4><p>草原上的大湖，最美草原公路自驾穿越，看鸟看水。</p></div></div>
+        <div class="ext"><span class="e-ic">🪨</span><div><h4>青山大裂痕 · 热阿线</h4><p>地质奇观 + 草原天路，越往深处越壮美。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 对比表 ===================== -->
+  <section class="compare">
+    <h2>一张表看明白</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>比一比</th><th>云台山</th><th>玉龙沙湖</th></tr></thead>
+        <tbody>
+          <tr><td class="dim">交通</td><td class="c-a">高铁直达，约 4.5 小时</td><td class="c-b">高铁直达，约 2.5 小时</td></tr>
+          <tr><td class="dim">建议天数</td><td class="c-a">3 天 2 晚</td><td class="c-b">4 天 3 晚</td></tr>
+          <tr><td class="dim">玩法类型</td><td class="c-a">玩水 · 喂猴 · 看山水</td><td class="c-b">滑沙 · 骑骆驼 · 草原石林</td></tr>
+          <tr><td class="dim">核心体验</td><td class="c-a">红石峡踩水、猕猴谷喂猴、潭瀑峡溯溪</td><td class="c-b">滑沙骑骆驼、草原骑马、石林探险</td></tr>
+          <tr><td class="dim">沿途可玩</td><td class="c-a">溶洞、神农山、游乐园、动物园、怪坡园</td><td class="c-b">桦木沟、道须沟、蛤蟆坝、王府、动物园</td></tr>
+          <tr><td class="dim">体力消耗</td><td class="c-a">中等，节奏轻松</td><td class="c-b">较大，玩得野</td></tr>
+          <tr><td class="dim">国庆拥挤度</td><td class="c-a">5A 热门但可控</td><td class="c-b">小众冷门，几乎不挤</td></tr>
+          <tr><td class="dim">接驳难度</td><td class="c-a">高铁直达，景区离市区近</td><td class="c-b">沙湖距市区较远，需包车</td></tr>
+          <tr><td class="dim">孩子的记忆点</td><td class="c-a">喂到猴子、踩到水</td><td class="c-b">滑到沙、骑到骆驼</td></tr>
+          <tr><td class="dim">一句话总结</td><td class="c-a">清凉省心、山水猴齐全</td><td class="c-b">塞外撒野、沙漠草原石林</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
-  <section class="conclusion" data-page-node-id="0Gx2pGMHGg5E8LhVC5CUoj">
-    <div class="box pick-a" data-page-node-id="7HHh8DYcarP2IY51Xa8cTi">
-      <h3 data-page-node-id="xGPB5aYRozu1IAr9xNRXwF">选云台山，如果…</h3>
-      <p data-page-node-id="tQAJKxJXuE1r6K7mMXJjwM">孩子喜欢玩水、看猴子，想节奏轻松一点、路上不折腾。山水猴齐全，3 天就够，家长也省心。</p>
+  <!-- ===================== 结论 ===================== -->
+  <section class="conclusion">
+    <div class="box pick-a">
+      <h3>选云台山，如果…</h3>
+      <ul>
+        <li>孩子喜欢玩水、看猴子，想要节奏轻松、路上不折腾。</li>
+        <li>3 天就够，想早点回家休息、不请太多假。</li>
+        <li>更看重「凉快 + 山水景色 + 亲子互动」，家长也省心。</li>
+      </ul>
     </div>
-    <div class="box pick-b" data-page-node-id="fb8SS2kJg5gdixdLWAdUO3">
-      <h3 data-page-node-id="JQqnZ7PeDdWo8ZWI8o9z9D">选玉龙沙湖，如果…</h3>
-      <p data-page-node-id="UlbNwHtGCa7sTZqL5mw38p">孩子爱撒野、体力好，想滑沙骑骆驼、看完全不一样的塞外沙漠草原。多留一天，人少景野更有记忆点。</p>
+    <div class="box pick-b">
+      <h3>选玉龙沙湖，如果…</h3>
+      <ul>
+        <li>孩子爱撒野、体力好，想滑沙骑骆驼、看完全不一样的塞外。</li>
+        <li>愿意多留一天，接受包车接驳，追求人少景野。</li>
+        <li>想要「沙漠 + 草原 + 石林」一次看全的稀缺体验。</li>
+      </ul>
     </div>
   </section>
 
-  <p class="footnote" data-page-node-id="WZGE2baSRSTaUkEzXogoUt">两条路线均从北京出发、纯内陆不靠海、适合国庆错峰带娃。具体车次、门票和价格已略去，先定方向，再补细节。</p>
+  <p class="footnote">两条路线均从北京出发、纯内陆不靠海、适合国庆错峰带娃。以上为方向对比，具体车次、门票和价格已略去，先定大方向，再补细节。景点图片来自同程旅行公开资源。</p>
 </main>
 </body>
 </html>
